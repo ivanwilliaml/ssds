@@ -1,0 +1,34 @@
+[   4.5s] [FOLD1 2023-24 (El Nino, climate MISMATCH vs real test)] CUT=2023-09-18 18:00:00 VA_END=2024-05-18 18:00:00 train_only=22336 val_only=20696
+[   7.1s] [FOLD1 2023-24 (El Nino, climate MISMATCH vs real test)] fold row-coverage vs real test per station (fraction of 726): min=0.45 mean=0.98 max=1.00
+[  10.0s] [FOLD1 2023-24 (El Nino, climate MISMATCH vs real test)] persistence=1.5809  ML_direct=1.4803  blend(tau=20)=1.4097
+                 n  rmse_blend
+hbin                          
+(0, 30]     2518.0    1.007951
+(30, 60]    2511.0    1.940406
+(60, 90]    2514.0    1.804116
+(90, 120]   2498.0    1.521526
+(120, 150]  2520.0    1.216914
+(150, 180]  2572.0    1.620174
+(180, 210]  2609.0    1.004658
+(210, 242]  2784.0    0.840861
+[  10.0s] [FOLD2 2024-25 (La Nina-ish, climate MATCH vs real test)] CUT=2024-09-18 18:00:00 VA_END=2025-05-18 18:00:00 train_only=53838 val_only=19514
+[  13.4s] [FOLD2 2024-25 (La Nina-ish, climate MATCH vs real test)] fold row-coverage vs real test per station (fraction of 726): min=0.88 mean=0.90 max=0.90
+[  15.4s] [FOLD2 2024-25 (La Nina-ish, climate MATCH vs real test)] persistence=2.1072  ML_direct=1.2096  blend(tau=20)=1.2043
+                 n  rmse_blend
+hbin                          
+(0, 30]     2699.0    0.348759
+(30, 60]    2700.0    0.711180
+(60, 90]    2700.0    1.633415
+(90, 120]   2700.0    1.653972
+(120, 150]  1626.0    1.638181
+(150, 180]  1521.0    1.026089
+(180, 210]  2700.0    1.030657
+(210, 242]  2868.0    1.053876
+
+===== SUMMARY =====
+{'label': 'FOLD1 2023-24 (El Nino, climate MISMATCH vs real test)', 'rmse_direct': np.float64(1.4802985866793774), 'rmse_blend': np.float64(1.4097335848751842)}
+{'label': 'FOLD2 2024-25 (La Nina-ish, climate MATCH vs real test)', 'rmse_direct': np.float64(1.2095733379085818), 'rmse_blend': np.float64(1.2043069259812977)}
+
+real test rows per station (should all be 726): [726]
+real test horizon range (days from train end): 241
+[  15.4s] DONE multi_fold_validate.py
