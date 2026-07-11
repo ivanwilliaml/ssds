@@ -1,0 +1,53 @@
+[   0.4s] candidate upstream pairs found: 26/30
+  Kedungupit                   <- Sekayu                       (gap=0.1 km)
+  Peren                        <- Serenan                      (gap=1.5 km)
+  Boboh Kali Lamong            <- Bengkelolor                  (gap=1.6 km)
+  Kali Anyar - Kreteg Abang    <- Jurug                        (gap=2.2 km)
+  Jurug                        <- Kali Pepe - PTPN             (gap=2.6 km)
+  Kali Pepe - PTPN             <- Kali Pepe - Tugu Boto        (gap=3.5 km)
+  Bojonegoro - Kali Kethek     <- Brangkal                     (gap=5.3 km)
+  Arjowinangun - Pacitan       <- Gunungsari                   (gap=6.7 km)
+  Kali Pepe - Tugu Boto        <- Peren                        (gap=7.0 km)
+  Serenan                      <- Jarum                        (gap=7.8 km)
+  Napel                        <- Ketonggo                     (gap=8.8 km)
+  Colo Weir                    <- Wonogiri Dam                 (gap=10.7 km)
+  Wonogiri Dam                 <- Ngadipiro                    (gap=11.0 km)
+  Jarum                        <- Colo Weir                    (gap=11.6 km)
+  Sekayu                       <- Badegan                      (gap=12.1 km)
+  Badegan                      <- Kali Anyar - Kreteg Abang    (gap=15.6 km)
+  Ngadipiro                    <- Ngrembang                    (gap=16.1 km)
+  Cepu                         <- Karangnongko                 (gap=18.7 km)
+  Floodway Bridge C            <- Babat                        (gap=21.3 km)
+  Karangnongko                 <- Napel                        (gap=23.8 km)
+  Babat                        <- Sumberrejo                   (gap=23.9 km)
+  Ketonggo                     <- Kajangan                     (gap=26.1 km)
+  Karanggeneng                 <- Floodway Bridge C            (gap=26.8 km)
+  Sumberrejo                   <- Bojonegoro - Kali Kethek     (gap=27.6 km)
+  Kajangan                     <- Kedungupit                   (gap=32.0 km)
+  Brangkal                     <- Cepu                         (gap=54.2 km)
+
+final shapefile-informed upstream map (23 stations):
+  Cepu                         <- Karangnongko                 lag=  0h corr=0.982
+  Karangnongko                 <- Napel                        lag=  6h corr=0.968
+  Napel                        <- Ketonggo                     lag=  0h corr=0.946
+  Sumberrejo                   <- Bojonegoro - Kali Kethek     lag=  6h corr=0.932
+  Babat                        <- Sumberrejo                   lag=  0h corr=0.930
+  Kajangan                     <- Kedungupit                   lag=  6h corr=0.927
+  Ketonggo                     <- Kajangan                     lag=  0h corr=0.907
+  Boboh Kali Lamong            <- Bengkelolor                  lag=  6h corr=0.885
+  Serenan                      <- Jarum                        lag=  0h corr=0.841
+  Kedungupit                   <- Sekayu                       lag=  6h corr=0.841
+  Peren                        <- Serenan                      lag=  0h corr=0.794
+  Sekayu                       <- Badegan                      lag=  0h corr=0.774
+  Ngadipiro                    <- Ngrembang                    lag=  0h corr=0.732
+  Bojonegoro - Kali Kethek     <- Brangkal                     lag=  6h corr=0.697
+  Brangkal                     <- Cepu                         lag=  0h corr=0.672
+  Kali Pepe - Tugu Boto        <- Peren                        lag=  0h corr=0.669
+  Colo Weir                    <- Wonogiri Dam                 lag=  0h corr=0.577
+  Floodway Bridge C            <- Babat                        lag=  6h corr=0.553
+  Wonogiri Dam                 <- Ngadipiro                    lag=144h corr=0.485
+  Karanggeneng                 <- Floodway Bridge C            lag=  0h corr=0.483
+  Jurug                        <- Kali Pepe - PTPN             lag=  6h corr=0.357
+  Kali Anyar - Kreteg Abang    <- Jurug                        lag=  0h corr=0.324
+  Jarum                        <- Colo Weir                    lag=  0h corr=0.318
+[   0.5s] saved upstream_shapefile_map.csv

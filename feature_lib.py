@@ -177,10 +177,27 @@ def make_pipelines(ridge_alpha=5.0, histgb_depth=6, histgb_lr=0.05, histgb_iter=
 
 
 # Empirically-derived upstream lead-lag map (see upstream_lag_test.py):
-# station -> (best leading station, lag in 6h-steps). Only pairs with
-# corr>0.5 AND lag>0 on the cleaned train series are included -- lag=0 "best
-# predictors" are excluded because they mostly reflect shared regional
-# weather driving both stations simultaneously, not real flow travel time.
+# station -> (upstream predictor station, lag in 6h-steps). Built from REAL
+# HydroRIVERS topology (upstream_shapefile_test.py): each station snapped to
+# its nearest river segment, DIST_DN_KM (distance to river mouth) on the same
+# MAIN_RIV gives genuine upstream/downstream order, capped at 100km gap.
+# The lag itself is then found empirically via cross-correlation restricted
+# to lag>=0 (physically causal direction only, since direction is already
+# fixed by the topology -- unlike the earlier blind pairwise-correlation
+# version, lag=0 here is trustworthy: it means fast travel time within one
+# 6h sampling step, not spurious shared-weather correlation).
+# NOTE: two shapefile-topology-derived variants were tested and NEITHER
+# improved on this smaller empirical map (see upstream_shapefile_test.py /
+# upstream_shapefile_map.csv for the full 23-pair candidate set derived from
+# real HydroRIVERS upstream/downstream ordering):
+#   - full replacement (23 pairs): FOLD2 RMSE 1.4433 -> 1.4707 (WORSE, likely
+#     HistGB overfitting on the extra columns within a fold-sized train set)
+#   - hybrid (add shapefile pairs only for Jurug/Peren, the top error
+#     contributors with no entry here): FOLD2 RMSE 1.4433 -> 1.4442
+#     (statistically negligible, within noise)
+# Kept as-is: whatever signal exists in the shapefile-informed pairs appears
+# to already be captured by other features (rolling exogenous windows,
+# seasonal_lag_1y, doy_climatology).
 UPSTREAM_MAP = {
     'Bojonegoro - Kali Kethek': ('Cepu', 1),
     'Karanggeneng': ('Sumberrejo', 1),

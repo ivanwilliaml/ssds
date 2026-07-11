@@ -1,0 +1,24 @@
+station,upstream_predictor,lag_steps,corr
+Ketonggo,Kajangan,0,0.9071400332683807
+Sekayu,Badegan,0,0.7742582291336499
+Cepu,Karangnongko,0,0.9819720826591526
+Karanggeneng,Floodway Bridge C,0,0.48250740951624294
+Bojonegoro - Kali Kethek,Brangkal,1,0.6968130357977556
+Wonogiri Dam,Ngadipiro,24,0.48475198957686044
+Kajangan,Kedungupit,1,0.9267029916914038
+Boboh Kali Lamong,Bengkelolor,1,0.885126081453106
+Kali Anyar - Kreteg Abang,Jurug,0,0.3235129583498564
+Colo Weir,Wonogiri Dam,0,0.5770093852829601
+Ngadipiro,Ngrembang,0,0.7320613760855714
+Karangnongko,Napel,1,0.9684201129621126
+Kali Pepe - Tugu Boto,Peren,0,0.66866695837082
+Kedungupit,Sekayu,1,0.8412712924326654
+Brangkal,Cepu,0,0.6724949623930672
+Babat,Sumberrejo,0,0.9297282785836584
+Napel,Ketonggo,0,0.9458650616144165
+Peren,Serenan,0,0.7940414891615145
+Jurug,Kali Pepe - PTPN,1,0.3574045046415965
+Jarum,Colo Weir,0,0.31759056245711126
+Sumberrejo,Bojonegoro - Kali Kethek,1,0.9318066469444015
+Floodway Bridge C,Babat,1,0.5534644089865639
+Serenan,Jarum,0,0.8412882895483149
