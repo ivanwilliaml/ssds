@@ -1,0 +1,42 @@
+[   0.2s] wide shape=(1881, 30) (timestamps x stations)
+                                     best_predictor lag_steps      corr lag_hours
+Cepu                                   Karangnongko         0  0.981972         0
+Karangnongko                                   Cepu         0  0.981972         0
+Napel                                          Cepu         0  0.964958         0
+Bojonegoro - Kali Kethek                       Cepu         1  0.962785         6
+Jurug                                       Serenan         0  0.960775         0
+Serenan                                       Jurug         0  0.960775         0
+Kajangan                                      Napel         0  0.955014         0
+Karanggeneng                             Sumberrejo         1  0.952432         6
+Ketonggo                                      Napel         0  0.945865         0
+Sumberrejo                             Karanggeneng         0  0.939441         0
+Babat                                    Sumberrejo         0  0.929728         0
+Kedungupit                                 Kajangan         0  0.926655         0
+Sekayu                                        Jurug         0  0.889006         0
+Ngadipiro                                    Sekayu         0  0.885502         0
+Boboh Kali Lamong                       Bengkelolor         1  0.885126         6
+Bengkelolor                       Boboh Kali Lamong         0  0.872946         0
+Jarum                                       Serenan         0  0.841288         0
+Peren                                         Jurug         0  0.839994         0
+Ngrembang                                    Sekayu         0  0.826569         0
+Lorog                                        Sekayu         0  0.808261         0
+Kali Pepe - Tugu Boto                    Kedungupit         0   0.79343         0
+Badegan                                   Ngadipiro         0   0.78849         0
+Arjowinangun - Pacitan                        Lorog         0  0.723771         0
+Brangkal                   Bojonegoro - Kali Kethek         0  0.692278         0
+Wonogiri Dam                           Karanggeneng        12  0.610708        72
+Floodway Bridge C          Bojonegoro - Kali Kethek         2  0.602594        12
+Colo Weir                              Wonogiri Dam         0  0.577009         0
+Kali Anyar - Kreteg Abang              Wonogiri Dam         9  0.551857        54
+Kali Pepe - PTPN                          Ngrembang         6   0.39011        36
+Gunungsari                                Ngrembang         2       0.0        12
+[   1.3s] saved upstream_lag_map.csv
+
+stations with corr>0.5 AND lag>0 (genuine upstream signal candidate): 6/30
+                                     best_predictor lag_steps      corr lag_hours
+Bojonegoro - Kali Kethek                       Cepu         1  0.962785         6
+Karanggeneng                             Sumberrejo         1  0.952432         6
+Boboh Kali Lamong                       Bengkelolor         1  0.885126         6
+Wonogiri Dam                           Karanggeneng        12  0.610708        72
+Floodway Bridge C          Bojonegoro - Kali Kethek         2  0.602594        12
+Kali Anyar - Kreteg Abang              Wonogiri Dam         9  0.551857        54

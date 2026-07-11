@@ -1,0 +1,31 @@
+,best_predictor,lag_steps,corr,lag_hours
+Cepu,Karangnongko,0,0.9819720826591526,0
+Karangnongko,Cepu,0,0.9819720826591524,0
+Napel,Cepu,0,0.9649582121525471,0
+Bojonegoro - Kali Kethek,Cepu,1,0.9627847485053804,6
+Jurug,Serenan,0,0.960774835073946,0
+Serenan,Jurug,0,0.9607748350739459,0
+Kajangan,Napel,0,0.9550143160325814,0
+Karanggeneng,Sumberrejo,1,0.952432136406124,6
+Ketonggo,Napel,0,0.9458650616144165,0
+Sumberrejo,Karanggeneng,0,0.9394410467927676,0
+Babat,Sumberrejo,0,0.9297282785836584,0
+Kedungupit,Kajangan,0,0.9266551719320375,0
+Sekayu,Jurug,0,0.8890055981120925,0
+Ngadipiro,Sekayu,0,0.88550245569151,0
+Boboh Kali Lamong,Bengkelolor,1,0.885126081453106,6
+Bengkelolor,Boboh Kali Lamong,0,0.8729456272197915,0
+Jarum,Serenan,0,0.8412882895483149,0
+Peren,Jurug,0,0.8399943325249797,0
+Ngrembang,Sekayu,0,0.8265688682729099,0
+Lorog,Sekayu,0,0.808261291259884,0
+Kali Pepe - Tugu Boto,Kedungupit,0,0.7934300569837904,0
+Badegan,Ngadipiro,0,0.7884897481646314,0
+Arjowinangun - Pacitan,Lorog,0,0.7237710131826172,0
+Brangkal,Bojonegoro - Kali Kethek,0,0.6922782893139551,0
+Wonogiri Dam,Karanggeneng,12,0.6107077292688108,72
+Floodway Bridge C,Bojonegoro - Kali Kethek,2,0.6025938972009138,12
+Colo Weir,Wonogiri Dam,0,0.5770093852829601,0
+Kali Anyar - Kreteg Abang,Wonogiri Dam,9,0.5518571688987971,54
+Kali Pepe - PTPN,Ngrembang,6,0.39011021441777377,36
+Gunungsari,Ngrembang,2,3.6258360026253133e-12,12
