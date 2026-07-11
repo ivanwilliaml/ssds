@@ -1,0 +1,51 @@
+[   4.5s] CUT=2024-09-18 18:00:00 VA_END=2025-05-18 18:00:00 train_only=53838 val_only=19514
+[   7.7s] features built. tr_feat=(53838, 51) va_feat=(19514, 51)
+[  12.7s] Ridge=1.2129  HistGB=1.2544  LGBM=1.2766
+[  12.7s] BEST direct ensemble RMSE=1.2096 weights(r,h,l)=(np.float64(0.8), np.float64(0.2), np.float64(-5.551115123125783e-17))
+[  12.7s] pure persistence RMSE=2.1072
+[  12.7s] seasonal_lag_1y only RMSE=1.5483
+[  12.7s] doy_climatology only RMSE=1.3960
+[  12.7s] ML direct only RMSE=1.2096
+  tau=  30 anchor=ML_direct    RMSE=1.2083
+  tau=  30 anchor=seasonal_1y  RMSE=1.5305
+  tau=  30 anchor=doy_clim     RMSE=1.3832
+  tau=  45 anchor=ML_direct    RMSE=1.2257
+  tau=  45 anchor=seasonal_1y  RMSE=1.5250
+  tau=  45 anchor=doy_clim     RMSE=1.3854
+  tau=  60 anchor=ML_direct    RMSE=1.2518
+  tau=  60 anchor=seasonal_1y  RMSE=1.5255
+  tau=  60 anchor=doy_clim     RMSE=1.3950
+  tau=  90 anchor=ML_direct    RMSE=1.3148
+  tau=  90 anchor=seasonal_1y  RMSE=1.5407
+  tau=  90 anchor=doy_clim     RMSE=1.4280
+  tau= 120 anchor=ML_direct    RMSE=1.3796
+  tau= 120 anchor=seasonal_1y  RMSE=1.5673
+  tau= 120 anchor=doy_clim     RMSE=1.4694
+  tau= 150 anchor=ML_direct    RMSE=1.4398
+  tau= 150 anchor=seasonal_1y  RMSE=1.5982
+  tau= 150 anchor=doy_clim     RMSE=1.5124
+  tau= 180 anchor=ML_direct    RMSE=1.4936
+  tau= 180 anchor=seasonal_1y  RMSE=1.6296
+  tau= 180 anchor=doy_clim     RMSE=1.5534
+  tau= 240 anchor=ML_direct    RMSE=1.5825
+  tau= 240 anchor=seasonal_1y  RMSE=1.6873
+  tau= 240 anchor=doy_clim     RMSE=1.6255
+  tau= 300 anchor=ML_direct    RMSE=1.6509
+  tau= 300 anchor=seasonal_1y  RMSE=1.7356
+  tau= 300 anchor=doy_clim     RMSE=1.6837
+[  12.8s] BEST 3-way anchor blend RMSE=1.3148 (tau,w_seas,w_doy,w_ml)=(90, np.float64(0.0), np.float64(0.0), np.float64(1.0))
+
+TOP-10 stations by error share (best config):
+                              rmse     share
+nama_pos                                    
+Wonogiri Dam              2.948871  0.167809
+Bojonegoro - Kali Kethek  2.578459  0.125737
+Ketonggo                  2.118280  0.086591
+Napel                     2.049971  0.081096
+Kedungupit                1.839626  0.065307
+Karangnongko              1.742216  0.058574
+Cepu                      1.670014  0.053820
+Jurug                     1.512527  0.044284
+Sumberrejo                1.476620  0.041301
+Kajangan                  1.439401  0.039982
+[  12.8s] DONE validate_v4.py

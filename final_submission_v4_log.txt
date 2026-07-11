@@ -1,0 +1,11 @@
+[   0.5s] loaded tr=(84396, 49) te=(21780, 50)
+[   6.8s] models fit
+[   7.3s] saved submission_v4.csv rows=21780 missing=0
+                                             id  tma_mdpl
+0  2025-09-19 06:00:00 - Arjowinangun - Pacitan  1.001036
+1  2025-09-19 12:00:00 - Arjowinangun - Pacitan  1.001821
+2  2025-09-19 18:00:00 - Arjowinangun - Pacitan  1.004010
+3  2025-09-20 06:00:00 - Arjowinangun - Pacitan  1.017412
+4  2025-09-20 12:00:00 - Arjowinangun - Pacitan  1.018875
+pred stats: min=0.781 max=145.302 mean=55.375
+[   7.3s] DONE

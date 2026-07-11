@@ -1,0 +1,10 @@
+[   2.9s] loaded train=(84396, 3) test=(21780, 2) dl=(888480, 27)
+[   2.9s] cleaned 206 spike/negative points out of 84396 (0.24%)
+[   3.0s] static attrs shape=(30, 5)
+[   4.7s] dl_feat built shape=(888480, 29)
+[   5.3s] after exog merge: train=(84396, 30) test=(21780, 29) test_na_exog=0
+[   7.0s] doy_climatology built (cleaned, smoothed +-5d)
+[   7.2s] seasonal_lag_1y rebuilt on cleaned data
+[   7.2s] persistence anchor added, horizon range: 0.5 to 242.0
+[   7.2s] FEATURE ENGINEERING DONE. train=(84396, 49) test=(21780, 50)
+[   7.8s] saved tr_feat_v4.parquet / te_feat_v4.parquet

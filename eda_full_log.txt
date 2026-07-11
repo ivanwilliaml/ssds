@@ -1,0 +1,282 @@
+
+===== EDA 1 =====
+train (84396, 3) test (21780, 3) stations_train 30 stations_test 30
+station set equal: True
+train dtypes: {'datetime': dtype('<M8[ns]'), 'nama_pos': dtype('O'), 'tma_mdpl': dtype('float64')}
+
+===== EDA 2 =====
+train NA:
+ datetime    0
+nama_pos    0
+tma_mdpl    0
+dtype: int64
+dl NA:
+ soil_moisture_0_7cm          720
+soil_moisture_7_28cm         720
+soil_moisture_28_100cm       720
+soil_moisture_100_255cm      720
+surface_pressure_hpa         720
+pressure_msl_hpa             720
+rmm1                         720
+rmm2                         720
+mjo_phase                    720
+mjo_amplitude                720
+mjo_active                   720
+nino_34                    12960
+dtype: int64
+
+===== EDA 3 =====
+train dup rows 0 dup key 0
+test dup key 0
+dl dup key 0
+
+===== EDA 4 =====
+count    84396.000000
+mean        56.482537
+std         46.765914
+min         -0.059668
+25%         10.100000
+50%         50.370000
+75%         90.660938
+max        325.830000
+Name: tma_mdpl, dtype: float64
+non-positive rows:
+                  datetime                  nama_pos  tma_mdpl
+15016 2023-09-14 06:00:00  Bojonegoro - Kali Kethek  0.000000
+34492 2025-02-28 06:00:00                     Jurug  0.000000
+41825 2023-11-04 18:00:00          Kali Pepe - PTPN  0.000000
+47644 2023-11-10 18:00:00              Karanggeneng  0.000000
+56259 2023-10-11 18:00:00                  Ketonggo -0.059668
+                                  min         max        mean       std  count
+nama_pos                                                                      
+Arjowinangun - Pacitan       0.347639    4.850000    1.116478  0.494220   2903
+Karanggeneng                 0.000000    5.133698    2.166324  0.972274   2903
+Floodway Bridge C            2.039797   47.000000    3.873757  1.380308   2377
+Boboh Kali Lamong            2.100000    7.600000    4.107014  1.289734   2902
+Babat                        4.410000    9.660000    6.305936  0.770386   2838
+Sumberrejo                   4.955646   12.582593    7.451679  1.339295   2878
+Bojonegoro - Kali Kethek     0.000000  225.130000    9.055246  5.718307   2688
+Bengkelolor                  7.588552   13.522786    9.813831  1.376864   2901
+Gunungsari                   9.017197   13.700000   10.037524  0.677213   1126
+Lorog                       12.400000   14.750000   12.859752  0.208160   2901
+Brangkal                    11.686848   19.035005   12.950141  0.919212   2901
+Cepu                        15.745126   23.670000   17.533931  1.442975   2893
+Karangnongko                19.804764  177.000000   22.686822  5.019815   2901
+Napel                       30.890131  325.830000   34.211310  5.692311   2901
+Ketonggo                    -0.059668   44.790000   37.478314  1.872821   2901
+Kajangan                    49.176478  172.770000   51.043766  2.608561   2901
+Kedungupit                  62.127709  207.736480   64.865189  3.081556   2901
+Jurug                        0.000000   86.460000   78.816650  1.943677   2903
+Kali Pepe - PTPN             0.000000  138.070000   82.546597  2.002690   2901
+Serenan                     85.470000   90.980000   86.321913  0.704617   2901
+Kali Anyar - Kreteg Abang   84.444045  323.207409   86.461244  4.464307   2901
+Sekayu                      86.606717   92.320000   87.272824  0.658941   2901
+Jarum                       89.289672  250.140000   90.720565  3.918467   2864
+Peren                       90.107944  170.100000   91.305143  2.016421   2902
+Kali Pepe - Tugu Boto       94.350666  100.420000   94.821256  0.448224   2900
+Colo Weir                  102.186332  109.700000  107.789569  1.119431   2903
+Badegan                    121.902101  123.960000  122.402005  0.309940   2901
+Wonogiri Dam               125.539541  137.357083  132.340343  3.299649   2901
+Ngrembang                  139.850191  143.790000  140.050592  0.286869   2901
+Ngadipiro                  143.177995  146.310000  143.562796  0.334947   2901
+
+===== EDA 5 =====
+                                          min                 max  count  expected_3xday  missing_frac
+nama_pos                                                                                              
+Floodway Bridge C         2023-01-01 06:00:00 2025-09-18 18:00:00   2377            2976      0.201277
+Bojonegoro - Kali Kethek  2023-01-01 06:00:00 2025-09-18 18:00:00   2688            2976      0.096774
+Gunungsari                2024-08-13 18:00:00 2025-09-18 18:00:00   1126            1206      0.066335
+Babat                     2023-01-01 06:00:00 2025-09-18 18:00:00   2838            2976      0.046371
+Jarum                     2023-01-01 06:00:00 2025-09-18 18:00:00   2864            2976      0.037634
+Sumberrejo                2023-01-01 06:00:00 2025-09-18 18:00:00   2878            2976      0.032930
+Cepu                      2023-01-01 06:00:00 2025-09-18 18:00:00   2893            2976      0.027890
+Kali Pepe - Tugu Boto     2023-01-01 06:00:00 2025-09-18 18:00:00   2900            2976      0.025538
+Kajangan                  2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Brangkal                  2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Kali Anyar - Kreteg Abang 2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Kali Pepe - PTPN          2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Badegan                   2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Bengkelolor               2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Serenan                   2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Napel                     2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Ngrembang                 2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Ngadipiro                 2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Ketonggo                  2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Kedungupit                2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Lorog                     2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Karangnongko              2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Wonogiri Dam              2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Sekayu                    2023-01-01 06:00:00 2025-09-18 18:00:00   2901            2976      0.025202
+Peren                     2023-01-01 06:00:00 2025-09-18 18:00:00   2902            2976      0.024866
+Boboh Kali Lamong         2023-01-01 06:00:00 2025-09-18 18:00:00   2902            2976      0.024866
+Jurug                     2023-01-01 06:00:00 2025-09-18 18:00:00   2903            2976      0.024530
+Colo Weir                 2023-01-01 06:00:00 2025-09-18 18:00:00   2903            2976      0.024530
+Arjowinangun - Pacitan    2023-01-01 06:00:00 2025-09-18 18:00:00   2903            2976      0.024530
+Karanggeneng              2023-01-01 06:00:00 2025-09-18 18:00:00   2903            2976      0.024530
+
+===== EDA 6 =====
+train_end 2025-09-18 18:00:00 test_start 2025-09-19 06:00:00 test_end 2026-05-18 18:00:00
+gap days (test_start - train_end): 0
+horizon days (test_end-test_start): 241
+rows per station in test (should be uniform): [726]
+
+===== EDA 7 =====
+monthly mean tma (all stations pooled, mind scale diff):
+ month
+1     57.140864
+2     57.803531
+3     57.319193
+4     56.588715
+5     56.427554
+6     55.980001
+7     56.173740
+8     56.235939
+9     55.677207
+10    55.577364
+11    56.061388
+12    56.781183
+Name: tma_mdpl, dtype: float64
+months covered by TEST: [np.int32(1), np.int32(2), np.int32(3), np.int32(4), np.int32(5), np.int32(9), np.int32(10), np.int32(11), np.int32(12)]  -> spans wet season (Nov-Apr) peak fully
+
+===== EDA 8 =====
+train doy range per year available - years: [2023 2024 2025]
+train max date used to have prior-year-same-doy target available for early test rows (doy 262):
+                    nama_pos            datetime  tma_mdpl
+1878  Arjowinangun - Pacitan 2024-09-18 06:00:00  0.812792
+1879  Arjowinangun - Pacitan 2024-09-18 12:00:00  1.145022
+1880  Arjowinangun - Pacitan 2024-09-18 18:00:00  0.850000
+4732                   Babat 2024-09-18 06:00:00  6.310000
+4733                   Babat 2024-09-18 12:00:00  6.310000
+
+===== EDA 9 =====
+stations with |z|>4 outlier count (train):
+ nama_pos
+Ngrembang                    40
+Colo Weir                    37
+Ngadipiro                    30
+Brangkal                     28
+Kali Pepe - Tugu Boto        25
+Sekayu                       25
+Lorog                        23
+Serenan                      21
+Arjowinangun - Pacitan       18
+Badegan                      13
+Babat                        11
+Cepu                          5
+Gunungsari                    5
+Jarum                         4
+Kali Pepe - PTPN              3
+Karangnongko                  3
+Bojonegoro - Kali Kethek      2
+Peren                         2
+Floodway Bridge C             1
+Kajangan                      1
+Kali Anyar - Kreteg Abang     1
+Kedungupit                    1
+Jurug                         1
+Napel                         1
+Ketonggo                      1
+dtype: int64
+
+===== EDA 10 =====
+                        nama_pos            datetime    tma_mdpl        diff
+61508                      Napel 2023-04-10 12:00:00   34.550000 -291.280000
+61507                      Napel 2023-04-10 06:00:00  325.830000  290.880000
+38492  Kali Anyar - Kreteg Abang 2023-06-13 18:00:00  323.207409  235.617409
+38493  Kali Anyar - Kreteg Abang 2023-06-14 06:00:00   87.640000 -235.567409
+15227   Bojonegoro - Kali Kethek 2023-11-23 18:00:00    6.520000 -218.610000
+15226   Bojonegoro - Kali Kethek 2023-11-23 12:00:00  225.130000  218.590000
+15241   Bojonegoro - Kali Kethek 2023-11-28 12:00:00    7.020000 -167.110000
+15240   Bojonegoro - Kali Kethek 2023-11-28 06:00:00  174.130000  166.890000
+29491                      Jarum 2023-02-22 18:00:00  250.140000  159.400000
+29492                      Jarum 2023-02-23 06:00:00   91.340000 -158.800000
+50055               Karangnongko 2023-05-30 18:00:00   21.570000 -155.430000
+50054               Karangnongko 2023-05-30 12:00:00  177.000000  155.420000
+50086               Karangnongko 2023-06-10 06:00:00   21.500000 -150.500000
+50085               Karangnongko 2023-06-09 18:00:00  172.000000  150.450000
+53401                 Kedungupit 2023-10-26 06:00:00   63.840000 -143.896480
+
+===== EDA 11 =====
+corr(exog, tma) pooled all stations (mind Simpson paradox across scale):
+ surface_pressure_hpa      -0.947417
+soil_moisture_100_255cm    0.189417
+soil_moisture_28_100cm     0.126973
+soil_moisture_7_28cm       0.123752
+dew_point_c               -0.121663
+soil_moisture_0_7cm        0.105786
+pressure_msl_hpa           0.097006
+temperature_c             -0.076961
+nino_34                    0.017774
+rainfall_mm               -0.005299
+mjo_amplitude              0.004439
+rmm2                       0.002720
+rmm1                      -0.002537
+humidity_pct               0.000426
+cloud_cover_pct            0.000275
+Name: tma_mdpl, dtype: float64
+
+===== EDA 12 =====
+per-station corr(rainfall, tma):
+ nama_pos
+Kali Anyar - Kreteg Abang    0.001619
+Wonogiri Dam                 0.003934
+Kali Pepe - PTPN             0.007204
+Floodway Bridge C            0.017224
+Jarum                        0.021719
+Peren                        0.037956
+Colo Weir                    0.040531
+Karangnongko                 0.042088
+Napel                        0.060293
+Bojonegoro - Kali Kethek     0.067540
+Kedungupit                   0.078642
+Kajangan                     0.078663
+Ngrembang                    0.095569
+Brangkal                     0.098936
+Sekayu                       0.100401
+Gunungsari                   0.103524
+Babat                        0.112869
+Bengkelolor                  0.114603
+Boboh Kali Lamong            0.115197
+Kali Pepe - Tugu Boto        0.117764
+Badegan                      0.122063
+Jurug                        0.125827
+Serenan                      0.142121
+Sumberrejo                   0.152707
+Ngadipiro                    0.152719
+Arjowinangun - Pacitan       0.159460
+Karanggeneng                 0.172360
+Cepu                         0.183925
+Ketonggo                     0.186649
+Lorog                        0.200475
+dtype: float64
+
+===== EDA 13 =====
+landcover_class nunique per station (1=static):
+ landcover_class
+1    30
+Name: count, dtype: int64
+built_surface_m2 std per station (near 0 = static):
+ count    30.0
+mean      0.0
+std       0.0
+min       0.0
+25%       0.0
+50%       0.0
+75%       0.0
+max       0.0
+Name: built_surface_m2, dtype: float64
+
+===== EDA 14 =====
+unique nino_34 values per station (should repeat monthly): 472.0
+unique mjo_phase transitions per day approx: 0.9991896272285251
+
+===== EDA 15 =====
+Jurug autocorr at ~1d lag (steps=3): 0.3452
+Jurug autocorr at ~3d lag (steps=9): 0.303
+Jurug autocorr at ~7d lag (steps=21): 0.2367
+Jurug autocorr at ~30d lag (steps=90): 0.1649
+Jurug autocorr at ~90d lag (steps=270): 0.0209
+Jurug autocorr at ~180d lag (steps=540): -0.1215
+Jurug autocorr at ~365d lag (steps=1095): 0.1428
+
+DONE eda_full.py in 4.0s
