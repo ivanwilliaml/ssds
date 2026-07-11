@@ -1,0 +1,63 @@
+[  24.9s] per-station best tau computed
+                  station  tau_star  rmse_star  p_beats_global
+                    Babat        75   0.793722        1.000000
+ Bojonegoro - Kali Kethek        15   2.047810        1.000000
+        Boboh Kali Lamong        15   1.047550        1.000000
+                    Jurug        10   3.391635        1.000000
+        Floodway Bridge C         5   1.200731        1.000000
+                     Cepu         5   1.290173        1.000000
+               Gunungsari        15   0.577545        1.000000
+                    Napel         5   1.463259        1.000000
+               Sumberrejo        30   1.241544        1.000000
+                  Serenan        10   0.680722        1.000000
+               Kedungupit        10   1.354873        1.000000
+                 Ketonggo         5   1.495203        1.000000
+         Kali Pepe - PTPN        90   0.282118        1.000000
+Kali Anyar - Kreteg Abang       150   0.437871        1.000000
+                Colo Weir        10   0.891358        0.993333
+             Wonogiri Dam        25   2.634015        0.993333
+                   Sekayu        15   0.628060        0.986667
+    Kali Pepe - Tugu Boto        40   0.482798        0.986667
+                    Lorog        30   0.271765        0.970000
+   Arjowinangun - Pacitan        25   0.475536        0.946667
+                 Kajangan         5   1.030821        0.933333
+                 Brangkal        40   0.775921        0.920000
+              Bengkelolor        10   0.967757        0.890000
+                Ngrembang       150   0.338775        0.830000
+             Karanggeneng        25   0.832701        0.796667
+                    Jarum        15   0.562066        0.763333
+             Karangnongko        15   1.381463        0.536667
+                  Badegan        20   0.279912        0.000000
+                    Peren        20   3.122943        0.000000
+                Ngadipiro        20   0.315267        0.000000
+[  31.4s] 
+26/30 stations pass the p>=0.7 bar -- these get a station-specific tau; the remaining 4 fall back to the global tau (avoids fitting sampling noise).
+
+ROBUST per-station tau map (bootstrap-confirmed):
+  'Arjowinangun - Pacitan': 25,
+  'Babat': 75,
+  'Bengkelolor': 10,
+  'Boboh Kali Lamong': 15,
+  'Bojonegoro - Kali Kethek': 15,
+  'Brangkal': 40,
+  'Cepu': 5,
+  'Colo Weir': 10,
+  'Floodway Bridge C': 5,
+  'Gunungsari': 15,
+  'Jarum': 15,
+  'Jurug': 10,
+  'Kajangan': 5,
+  'Kali Anyar - Kreteg Abang': 150,
+  'Kali Pepe - PTPN': 90,
+  'Kali Pepe - Tugu Boto': 40,
+  'Karanggeneng': 25,
+  'Kedungupit': 10,
+  'Ketonggo': 5,
+  'Lorog': 30,
+  'Napel': 5,
+  'Ngrembang': 150,
+  'Sekayu': 15,
+  'Serenan': 10,
+  'Sumberrejo': 30,
+  'Wonogiri Dam': 25,
+[  31.4s] saved bootstrap_tau_results.csv

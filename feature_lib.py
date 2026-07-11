@@ -132,6 +132,35 @@ def build_doy_clim(train_only):
     return pd.concat(out, ignore_index=True)
 
 
+def build_doy_clim_loyo(train_only):
+    """Leave-one-year-out variant of build_doy_clim. Fixes a mild self-
+    referential leak (review point #4): when build_features is called with
+    target_df=train_only (fitting the training set itself), each row's own
+    observation was previously ~1 of ~99 points averaged into its own
+    doy_climatology feature. Here, each row's climatology is computed
+    excluding its own year entirely, so a training row never contributes to
+    its own feature value. Val/test rows are never part of train_only, so
+    they don't need this (build_doy_clim is fine for them)."""
+    if 'doy' not in train_only.columns:
+        train_only = train_only.assign(doy=train_only['datetime'].dt.dayofyear)
+    if 'year' not in train_only.columns:
+        train_only = train_only.assign(year=train_only['datetime'].dt.year)
+    years = sorted(train_only['year'].unique())
+    out = []
+    for stn, g in train_only.groupby('nama_pos'):
+        for yr in years:
+            g_excl = g[g['year'] != yr]
+            s = g_excl.set_index('doy')['tma_mdpl']
+            means = {}
+            for d in range(1, 367):
+                window = [((d + off - 1) % 366) + 1 for off in range(-5, 6)]
+                vals = s[s.index.isin(window)]
+                means[d] = vals.mean() if len(vals) else np.nan
+            out.append(pd.DataFrame({'nama_pos': stn, 'year': yr, 'doy': list(means.keys()),
+                                      'doy_climatology_loyo': list(means.values())}))
+    return pd.concat(out, ignore_index=True)
+
+
 def add_seasonal_lag(target_df, source_df, days=365, tol_days=2, name='seasonal_lag_1y'):
     src = source_df[['datetime','nama_pos','tma_mdpl']].rename(columns={'tma_mdpl': name, 'datetime': 'src_dt'}).sort_values('src_dt')
     tgt = target_df.copy()
@@ -142,21 +171,33 @@ def add_seasonal_lag(target_df, source_df, days=365, tol_days=2, name='seasonal_
     return out.drop(columns=['lookup_dt', 'src_dt']).sort_index()
 
 
-def build_features(train_only, target_df, dl_feat, static):
+def build_features(train_only, target_df, dl_feat, static, self_fit=False):
     """train_only: CLEANED rows with datetime<=CUT, used for all fold statistics.
-       target_df: rows to build features for (train_only itself, or validation/test rows)."""
+       target_df: rows to build features for (train_only itself, or validation/test rows).
+       self_fit: set True ONLY when target_df IS train_only (fitting the model's
+       own training rows) -- switches doy_climatology to the leave-one-year-out
+       variant so a training row never sees itself in its own climatology
+       feature (review point #4). Val/test calls should leave this False."""
     df = target_df.merge(dl_feat, on=['datetime','nama_pos'], how='left')
     df = add_calendar(df)
     df = df.merge(static, on='nama_pos', how='left')
     stn_stats = train_only.groupby('nama_pos')['tma_mdpl'].agg(station_mean='mean', station_std='std', station_median='median').reset_index()
     df = df.merge(stn_stats, on='nama_pos', how='left')
-    doy_clim = build_doy_clim(train_only)
-    df = df.merge(doy_clim, on=['nama_pos','doy'], how='left')
     fallback = stn_stats.set_index('nama_pos')['station_mean']
+    if self_fit:
+        df['year'] = df['datetime'].dt.year
+        doy_clim_loyo = build_doy_clim_loyo(train_only)
+        df = df.merge(doy_clim_loyo, on=['nama_pos','doy','year'], how='left')
+        df['doy_climatology'] = df['doy_climatology_loyo']
+        df = df.drop(columns=['doy_climatology_loyo'])
+    else:
+        doy_clim = build_doy_clim(train_only)
+        df = df.merge(doy_clim, on=['nama_pos','doy'], how='left')
     df['doy_climatology'] = df['doy_climatology'].fillna(df['nama_pos'].map(fallback))
     df = add_seasonal_lag(df, train_only)
     df['seasonal_lag_1y'] = df['seasonal_lag_1y'].fillna(df['doy_climatology'])
-    df = add_upstream_lag(df, train_only)
+    fold_upstream_map = derive_upstream_map(train_only)
+    df = add_upstream_lag(df, train_only, upstream_map=fold_upstream_map)
     df['upstream_lag_value'] = df['upstream_lag_value'].fillna(df['doy_climatology'])
     last_known = train_only.sort_values('datetime').groupby('nama_pos').tail(1)[['nama_pos','datetime','tma_mdpl']]
     lk_map = last_known.set_index('nama_pos')
@@ -176,46 +217,64 @@ def make_pipelines(ridge_alpha=5.0, histgb_depth=6, histgb_lr=0.05, histgb_iter=
     return ridge, histgb
 
 
-# Empirically-derived upstream lead-lag map (see upstream_lag_test.py):
-# station -> (upstream predictor station, lag in 6h-steps). Built from REAL
-# HydroRIVERS topology (upstream_shapefile_test.py): each station snapped to
-# its nearest river segment, DIST_DN_KM (distance to river mouth) on the same
-# MAIN_RIV gives genuine upstream/downstream order, capped at 100km gap.
-# The lag itself is then found empirically via cross-correlation restricted
-# to lag>=0 (physically causal direction only, since direction is already
-# fixed by the topology -- unlike the earlier blind pairwise-correlation
-# version, lag=0 here is trustworthy: it means fast travel time within one
-# 6h sampling step, not spurious shared-weather correlation).
-# NOTE: two shapefile-topology-derived variants were tested and NEITHER
-# improved on this smaller empirical map (see upstream_shapefile_test.py /
-# upstream_shapefile_map.csv for the full 23-pair candidate set derived from
-# real HydroRIVERS upstream/downstream ordering):
-#   - full replacement (23 pairs): FOLD2 RMSE 1.4433 -> 1.4707 (WORSE, likely
-#     HistGB overfitting on the extra columns within a fold-sized train set)
-#   - hybrid (add shapefile pairs only for Jurug/Peren, the top error
-#     contributors with no entry here): FOLD2 RMSE 1.4433 -> 1.4442
-#     (statistically negligible, within noise)
-# Kept as-is: whatever signal exists in the shapefile-informed pairs appears
-# to already be captured by other features (rolling exogenous windows,
-# seasonal_lag_1y, doy_climatology).
-UPSTREAM_MAP = {
-    'Bojonegoro - Kali Kethek': ('Cepu', 1),
-    'Karanggeneng': ('Sumberrejo', 1),
-    'Boboh Kali Lamong': ('Bengkelolor', 1),
-    'Wonogiri Dam': ('Karanggeneng', 12),
-    'Floodway Bridge C': ('Bojonegoro - Kali Kethek', 2),
-    'Kali Anyar - Kreteg Abang': ('Wonogiri Dam', 9),
+# Upstream-predictor TOPOLOGY (which station feeds which) -- this is a
+# physical/geographic fact and does not change across folds, so it stays
+# fixed. See upstream_lag_test.py for the empirical station-pairing search
+# and upstream_shapefile_test.py for confirmation against the real
+# HydroRIVERS river network (DIST_DN_KM ordering matches this pairing).
+#
+# NOTE: two shapefile-topology-derived variants using the FULL 23-pair
+# candidate set (upstream_shapefile_map.csv) were tested and NEITHER improved
+# on this smaller map -- full replacement made FOLD2 RMSE worse (1.4433 ->
+# 1.4707, likely HistGB overfitting on the extra columns), a hybrid adding
+# Jurug/Peren was statistically negligible (1.4433 -> 1.4442). Kept as-is.
+UPSTREAM_TOPOLOGY = {
+    'Bojonegoro - Kali Kethek': 'Cepu',
+    'Karanggeneng': 'Sumberrejo',
+    'Boboh Kali Lamong': 'Bengkelolor',
+    'Wonogiri Dam': 'Karanggeneng',
+    'Floodway Bridge C': 'Bojonegoro - Kali Kethek',
+    'Kali Anyar - Kreteg Abang': 'Wonogiri Dam',
 }
+LAG_CANDIDATES_6H_STEPS = (0, 1, 2, 3, 6, 9, 12)
 
 
-def add_upstream_lag(target_df, source_df):
-    """For stations with a known empirical upstream predictor, add the
-    predictor's value `lag_steps*6h` before each target timestamp (merge_asof,
-    nearest within 3h tolerance). Falls back to NaN (caller should fillna)
-    for stations without a qualifying upstream pair."""
+def derive_upstream_map(train_only, topology=None, lag_candidates=LAG_CANDIDATES_6H_STEPS):
+    """Re-derives the LAG for each upstream_topology pair from train_only
+    alone (fold-specific). Fixes review point #5: the lag was previously a
+    hardcoded constant derived once from a train_only ending 2024-09-18 --
+    correct for FOLD2 (same cutoff) but reused, uncorrected, for FOLD1
+    (cutoff 2023-09-18), meaning FOLD1's number quietly depended on data
+    after its own cutoff. This function is now called fresh inside
+    build_features for every fold and for the final full-train submission,
+    so the lag always reflects only data available up to that call's cutoff."""
+    topology = topology or UPSTREAM_TOPOLOGY
+    wide = train_only.pivot_table(index='datetime', columns='nama_pos', values='tma_mdpl').sort_index()
+    out = {}
+    for stn, pred in topology.items():
+        if stn not in wide.columns or pred not in wide.columns:
+            continue
+        y = wide[stn]
+        best = (0, -2)
+        for lag in lag_candidates:
+            c = wide[pred].shift(lag).corr(y)
+            if pd.notna(c) and c > best[1]:
+                best = (lag, c)
+        out[stn] = (pred, best[0])
+    return out
+
+
+def add_upstream_lag(target_df, source_df, upstream_map=None):
+    """For stations with a known upstream predictor, add the predictor's
+    value `lag_steps*6h` before each target timestamp (merge_asof, nearest
+    within 3h tolerance). Falls back to NaN (caller should fillna) for
+    stations without a qualifying upstream pair. upstream_map should be
+    derived fresh per fold via derive_upstream_map(train_only)."""
+    if upstream_map is None:
+        upstream_map = derive_upstream_map(source_df)
     df = target_df.copy()
     df['upstream_lag_value'] = np.nan
-    for stn, (pred_stn, lag_steps) in UPSTREAM_MAP.items():
+    for stn, (pred_stn, lag_steps) in upstream_map.items():
         mask = df['nama_pos'] == stn
         if not mask.any():
             continue

@@ -1,0 +1,38 @@
+[   5.3s] expected grid rows=89280  observed=84396  missing=4884 (5.47%)
+
+rainfall_mm_roll24h_sum, missing vs observed rows (pooled all stations):
+           count      mean       std  min  25%  50%   75%    max
+missing                                                         
+False    84396.0  6.035522  8.632803  0.0  0.1  1.8   9.3  102.6
+True      4884.0  7.886794  9.591548  0.0  0.5  4.0  12.9   95.2
+[   5.6s] 
+per-station missingness rate + mean rainfall on missing vs observed rows:
+                           rain_mean_observed  rain_mean_missing  missing_rate_pct  rain_ratio_missing_vs_observed
+nama_pos                                                                                                          
+Gunungsari                           6.872380           4.194811         62.163978                        0.610387
+Floodway Bridge C                    7.722381           5.991653         20.127688                        0.775882
+Bojonegoro - Kali Kethek             6.410082           3.770139          9.677419                        0.588158
+Babat                                6.937632          13.923913          4.637097                        2.007012
+Jarum                                6.690782          10.402679          3.763441                        1.554778
+Sumberrejo                           6.686796          11.841837          3.293011                        1.770928
+Cepu                                 6.499309          11.095181          2.788978                        1.707132
+Kali Pepe - Tugu Boto                6.073966          11.088158          2.553763                        1.825522
+Kajangan                             4.941641           9.304000          2.520161                        1.882775
+Brangkal                             6.715684          13.197333          2.520161                        1.965151
+Kali Anyar - Kreteg Abang            6.071906          11.234667          2.520161                        1.850270
+Kali Pepe - PTPN                     6.071906          11.234667          2.520161                        1.850270
+Badegan                              3.779524           7.682667          2.520161                        2.032707
+Bengkelolor                          6.448397          14.500000          2.520161                        2.248621
+Serenan                              6.666460          13.174667          2.520161                        1.976261
+[   5.6s] 
+focus stations (highest missingness from EDA #5):
+                          rain_mean_observed  rain_mean_missing  missing_rate_pct  rain_ratio_missing_vs_observed
+nama_pos                                                                                                         
+Gunungsari                          6.872380           4.194811         62.163978                        0.610387
+Floodway Bridge C                   7.722381           5.991653         20.127688                        0.775882
+Bojonegoro - Kali Kethek            6.410082           3.770139          9.677419                        0.588158
+[   5.6s] 
+Mann-Whitney U test (H1: missing rows have HIGHER rainfall than observed rows): p-value=3.035e-70
+[   5.6s] median rainfall: missing=4.000  observed=1.800
+[   5.6s] CONCLUSION: missingness IS skewed toward wetter conditions -- backtest RMSE is
+[   5.6s]   likely an underestimate of real-test difficulty for high-missingness stations.

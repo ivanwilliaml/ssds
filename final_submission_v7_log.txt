@@ -1,0 +1,5 @@
+[   0.4s] loaded tr=(84396, 53) te=(21780, 51)
+[   7.4s] models fit (Ridge, LGBM -- HistGB weight is 0 this round, skip fitting it)
+[   7.8s] saved submission_v7.csv rows=21780
+pred stats: min=0.839 max=144.858 mean=55.421
+[   7.8s] DONE

@@ -22,7 +22,7 @@ train_clean = fl.clean_dataframe(RAW)
 n_cleaned = (train_clean['tma_mdpl'].values != RAW.sort_values(['nama_pos','datetime'])['tma_mdpl'].values).sum()
 log(f"cleaned ~{n_cleaned} points (spike/negative)")
 
-tr_feat = fl.build_features(train_clean, train_clean, dl_feat, static)
+tr_feat = fl.build_features(train_clean, train_clean, dl_feat, static, self_fit=True)
 te_feat = fl.build_features(train_clean, TEST, dl_feat, static)
 tr_feat[fl.FEATURE_COLS_NUM] = tr_feat[fl.FEATURE_COLS_NUM].fillna(0)
 te_feat[fl.FEATURE_COLS_NUM] = te_feat[fl.FEATURE_COLS_NUM].fillna(0)

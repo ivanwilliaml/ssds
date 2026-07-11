@@ -23,7 +23,7 @@ CUT = pd.Timestamp('2024-09-18 18:00:00'); VA_END = pd.Timestamp('2025-05-18 18:
 train_only = fl.clean_dataframe(RAW[RAW.datetime <= CUT].copy())
 val_only = RAW[(RAW.datetime > CUT) & (RAW.datetime <= VA_END)].copy()
 
-tr_feat = fl.build_features(train_only, train_only, dl_feat, static)
+tr_feat = fl.build_features(train_only, train_only, dl_feat, static, self_fit=True)
 va_feat = fl.build_features(train_only, val_only[['datetime','nama_pos']].copy(), dl_feat, static)
 va_feat = va_feat.merge(val_only[['datetime','nama_pos','tma_mdpl']].rename(columns={'tma_mdpl':'y_true'}),
                          on=['datetime','nama_pos'], how='left')

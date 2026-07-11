@@ -1,0 +1,4 @@
+[   8.1s] loaded train=(84396, 3) test=(21780, 2)
+[   8.1s] spike cleaning applied
+[  17.5s] features built: tr_feat=(84396, 53) te_feat=(21780, 51)
+[  18.2s] saved tr_feat_v7.parquet / te_feat_v7.parquet

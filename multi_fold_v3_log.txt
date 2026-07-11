@@ -1,0 +1,34 @@
+[   5.4s] REAL TEST regime 2025-09-19..2026-05-18: {'nino34_mean': np.float64(-0.32147835087114024), 'rainfall_mean': np.float64(0.367662009085159), 'rainfall_total_per_station': np.float64(2131.3366666666666)}
+[   5.4s] === SELECTION PASS (both folds self-tune, same as v2) ===
+[   5.4s] [FOLD2 select] CUT=2024-09-18 18:00:00 VA_END=2025-05-18 18:00:00 train_only=53838 val_only=19514
+[   5.4s] [FOLD2 select] fold climate regime: {'nino34_mean': np.float64(-0.3259930855661193), 'rainfall_mean': np.float64(0.4296779026217229), 'rainfall_total_per_station': np.float64(2485.686666666667)}  | nino34_gap=0.005  rainfall_gap=16.9%
+[   5.4s] [FOLD2 select] row-coverage vs real test: min=0.88 mean=0.90 max=0.90
+[  18.7s] [FOLD2 select] ensemble weights(r,h,l)=(np.float64(0.4), np.float64(0.0), np.float64(0.6))  direct RMSE=1.3486  (select_weights=True)
+[  18.8s] [FOLD2 select] tau=15 blend RMSE=1.3419  (persistence=2.2563)  (select_tau=True)
+[  18.8s] [FOLD1 select] CUT=2023-09-18 18:00:00 VA_END=2024-05-18 18:00:00 train_only=22336 val_only=20696
+[  18.9s] [FOLD1 select] fold climate regime: {'nino34_mean': np.float64(1.476035462213806), 'rainfall_mean': np.float64(0.2812767544614678), 'rainfall_total_per_station': np.float64(1633.9366666666667)}  | nino34_gap=1.798  rainfall_gap=23.5%
+[  18.9s] [FOLD1 select] row-coverage vs real test: min=0.45 mean=0.98 max=1.00
+[  25.5s] [FOLD1 select] ensemble weights(r,h,l)=(np.float64(0.0), np.float64(1.0), np.float64(0.0))  direct RMSE=2.5875  (select_weights=True)
+[  25.6s] [FOLD1 select] tau=120 blend RMSE=2.5372  (persistence=2.8156)  (select_tau=True)
+[  25.6s] 
+=== CROSS-FOLD STABILITY CHECK (review point #1) ===
+[  25.6s] [FOLD1 scored w/ FOLD2 config] CUT=2023-09-18 18:00:00 VA_END=2024-05-18 18:00:00 train_only=22336 val_only=20696
+[  25.7s] [FOLD1 scored w/ FOLD2 config] fold climate regime: {'nino34_mean': np.float64(1.476035462213806), 'rainfall_mean': np.float64(0.2812767544614678), 'rainfall_total_per_station': np.float64(1633.9366666666667)}  | nino34_gap=1.798  rainfall_gap=23.5%
+[  25.7s] [FOLD1 scored w/ FOLD2 config] row-coverage vs real test: min=0.45 mean=0.98 max=1.00
+[  32.5s] [FOLD1 scored w/ FOLD2 config] ensemble weights(r,h,l)=(np.float64(0.4), np.float64(0.0), np.float64(0.6))  direct RMSE=2.6488  (select_weights=False)
+[  32.5s] [FOLD1 scored w/ FOLD2 config] tau=15 blend RMSE=2.6411  (persistence=2.8156)  (select_tau=False)
+
+===== SUMMARY =====
+FOLD2 self-tuned (this fold picked the config):      RMSE=1.3419  tau=15  weights=(np.float64(0.4), np.float64(0.0), np.float64(0.6))
+FOLD1 self-tuned (its own best-case, different config): RMSE=2.5372  tau=120  weights=(np.float64(0.0), np.float64(1.0), np.float64(0.0))
+FOLD1 scored w/ FOLD2's FROZEN config (no re-selection): RMSE=2.6411
+
+Frozen-config penalty on FOLD1 vs its own self-tuned best: +0.1039
+(a large positive gap here would mean the FOLD2-selected config is curve-fit to FOLD2's
+ noise rather than a genuinely stable choice; FOLD1's own climate mismatch to the real
+ test period means this isn't a clean unbiased estimate of the final config's real-test
+ RMSE either, but it tells us whether the config is at least directionally stable.)
+
+PRIMARY FOLD (closest climate regime to real test): FOLD2
+  -> use weights=(np.float64(0.4), np.float64(0.0), np.float64(0.6)) tau=15 for final submission
+[  32.5s] DONE multi_fold_validate_v3.py
