@@ -1,0 +1,56 @@
+[  14.6s] Top-12 stations by squared-error share (global tau=20 baseline):
+                               mean  count      rmse     share       level
+nama_pos                                                                  
+Jurug                     11.924030    653  3.453119  0.191543   79.356935
+Peren                      9.790044    652  3.128905  0.157022   91.510565
+Wonogiri Dam               5.936101    651  2.436411  0.095063  132.484163
+Bojonegoro - Kali Kethek   5.766255    638  2.401303  0.090499    9.810218
+Ketonggo                   3.325153    651  1.823500  0.053250   38.423283
+Napel                      3.311981    651  1.819885  0.053039   34.966306
+Karangnongko               2.546296    651  1.595712  0.040777   23.331388
+Kedungupit                 2.416032    651  1.554359  0.038691   65.426970
+Cepu                       2.357790    651  1.535510  0.037759   18.237762
+Sumberrejo                 2.114307    639  1.454066  0.033235    8.047129
+Floodway Bridge C          1.659083    651  1.288054  0.026569    3.772494
+Kajangan                   1.643183    651  1.281867  0.026315   51.564894
+[  14.8s] GLOBAL tau=20 RMSE: 1.4433
+[  14.8s] PER-STATION tau RMSE: 1.4335
+
+per-station best tau:
+  Jurug                        best_tau=     5 rmse=3.4512
+  Peren                        best_tau=    15 rmse=3.1289
+  Wonogiri Dam                 best_tau=    20 rmse=2.4364
+  Bojonegoro - Kali Kethek     best_tau=     5 rmse=2.3980
+  Napel                        best_tau=     5 rmse=1.8108
+  Ketonggo                     best_tau=     5 rmse=1.8093
+  Karangnongko                 best_tau=    15 rmse=1.5948
+  Kedungupit                   best_tau=    10 rmse=1.5500
+  Cepu                         best_tau=     5 rmse=1.5307
+  Sumberrejo                   best_tau=    40 rmse=1.4379
+  Kajangan                     best_tau=     5 rmse=1.2765
+  Floodway Bridge C            best_tau=    90 rmse=1.2537
+  Boboh Kali Lamong            best_tau=    15 rmse=1.1210
+  Bengkelolor                  best_tau=    10 rmse=1.0646
+  Colo Weir                    best_tau=    90 rmse=0.9586
+  Karanggeneng                 best_tau=    30 rmse=0.8993
+  Gunungsari                   best_tau=    15 rmse=0.8508
+  Babat                        best_tau=    75 rmse=0.8268
+  Brangkal                     best_tau=    25 rmse=0.8252
+  Serenan                      best_tau=     5 rmse=0.7923
+  Sekayu                       best_tau=    15 rmse=0.7882
+  Jarum                        best_tau=    15 rmse=0.6463
+  Arjowinangun - Pacitan       best_tau=    60 rmse=0.5988
+  Kali Pepe - Tugu Boto        best_tau=    40 rmse=0.4842
+  Kali Anyar - Kreteg Abang    best_tau=   180 rmse=0.4765
+  Lorog                        best_tau=    25 rmse=0.3532
+  Ngadipiro                    best_tau=    20 rmse=0.3319
+  Ngrembang                    best_tau=    40 rmse=0.3261
+  Kali Pepe - PTPN             best_tau=   120 rmse=0.2896
+  Badegan                      best_tau=    15 rmse=0.2706
+[  14.8s] 
+Plateau (flat-run) audit for the 4 top error-contributor stations:
+  Jurug                        n_plateaus(>=3 steps)=  9  max_plateau_steps=  3  full_precision=True
+  Peren                        n_plateaus(>=3 steps)=118  max_plateau_steps= 11  full_precision=True
+  Wonogiri Dam                 n_plateaus(>=3 steps)=162  max_plateau_steps= 21  full_precision=True
+  Bojonegoro - Kali Kethek     n_plateaus(>=3 steps)= 56  max_plateau_steps= 18  full_precision=True
+[  14.8s] DONE per_station_tau_test.py
