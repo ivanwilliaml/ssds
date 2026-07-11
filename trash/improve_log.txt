@@ -1,0 +1,17 @@
+[   8.8s] far-horizon: tr=63197 va=21199 (260d)
+[  17.0s] Ridge=1.6187  HistGB=1.8298  LGBM=2.1177
+[  17.0s] BEST direct ensemble RMSE=1.6160  weights(r,h,l)=(np.float64(0.8), np.float64(0.2), np.float64(-0.0))
+[  17.0s] horizon days: min=0 max=261
+[  17.0s]   pure persistence (w=1) RMSE=1.5333
+[  17.0s]   persistence blend tau= 30  RMSE=1.5740 <--
+[  17.0s]   persistence blend tau= 45  RMSE=1.5440 <--
+[  17.0s]   persistence blend tau= 60  RMSE=1.5094 <--
+[  17.0s]   persistence blend tau= 90  RMSE=1.4466 <--
+[  17.0s]   persistence blend tau=120  RMSE=1.4021 <--
+[  17.0s]   persistence blend tau=150  RMSE=1.3742 <--
+[  17.0s]   persistence blend tau=180  RMSE=1.3580 <--
+[  17.0s]   persistence blend tau=240  RMSE=1.3466 <--
+[  17.0s]   persistence blend tau=300  RMSE=1.3488
+
+[  17.0s] BEST OVERALL far-horizon RMSE=1.3466  (tau=240, direct-only=1.6160)
+[  17.0s] DONE (17.0s)

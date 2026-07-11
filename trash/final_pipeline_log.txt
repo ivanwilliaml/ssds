@@ -1,0 +1,16 @@
+[   2.9s] loaded train=(84396, 3) test=(21780, 3)
+[   7.8s] env features merged
+[   8.1s] feature engineering done — 64 features
+[  16.1s] VALIDATION CHECK — RF_sub600+LR ensemble: RMSE=0.1885  MAE=0.1132  R2=0.999984
+[  24.0s] deployed models fit — RF on 18000 rows, LR on 83766 rows
+[  49.7s] recursive forecast over 726 timesteps done (25.5s)
+[  49.8s] submission saved — missing=0
+                                             id  tma_mdpl
+0  2025-09-19 06:00:00 - Arjowinangun - Pacitan  1.027413
+1  2025-09-19 12:00:00 - Arjowinangun - Pacitan  0.873439
+2  2025-09-19 18:00:00 - Arjowinangun - Pacitan  1.006089
+3  2025-09-20 06:00:00 - Arjowinangun - Pacitan  1.085318
+4  2025-09-20 12:00:00 - Arjowinangun - Pacitan  1.074859
+
+[  49.8s] TOTAL PIPELINE TIME: 49.8s (0.83 min)
+[  49.8s] DEPLOYED CONFIG: RandomForest(n_estimators=60,max_depth=12) on 600/station subsample + LinearRegression on full data, averaged — validated RMSE=0.1885

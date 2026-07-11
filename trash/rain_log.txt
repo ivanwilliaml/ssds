@@ -1,0 +1,27 @@
+[   8.0s] SEASON-MATCHED backtest (Sep->May): tr=53838 va=19514 (241d)
+[  14.2s] Ridge=2.2253  HistGB=2.6033  LGBM=2.3859
+[  14.2s] BEST direct ensemble RMSE=2.1679  weights(r,h,l)=(np.float64(0.6), np.float64(0.0), np.float64(0.4))
+[  14.3s] horizon days: min=0 max=242
+[  14.3s]   pure persistence (w=1) RMSE=2.2563
+[  14.3s]   persistence blend tau= 30  RMSE=2.0536 <--
+[  14.3s]   persistence blend tau= 45  RMSE=1.9830 <--
+[  14.3s]   persistence blend tau= 60  RMSE=1.9342 <--
+[  14.3s]   persistence blend tau= 90  RMSE=1.8795 <--
+[  14.3s]   persistence blend tau=120  RMSE=1.8583 <--
+[  14.3s]   persistence blend tau=150  RMSE=1.8555 <--
+[  14.3s]   persistence blend tau=180  RMSE=1.8625
+[  14.3s]   persistence blend tau=240  RMSE=1.8888
+[  14.3s]   persistence blend tau=300  RMSE=1.9191
+
+[  14.3s] BEST OVERALL far-horizon RMSE=1.8555  (tau=150, direct-only=2.1679)
+
+[  14.3s] --- standalone anchors ---
+[  14.3s] seasonal_lag_1y only  RMSE=64.1609
+[  14.3s] doy_climatology only  RMSE=2.2231
+[  14.3s] --- blend last_known(near) -> ANCHOR(far), w=exp(-h/tau) ---
+[  14.3s]   persistence->ML_direct    best RMSE=1.8555 (tau=150)
+[  14.3s]   persistence->seasonal_1y  best RMSE=31.3625 (tau=180)
+[  14.3s]   persistence->doy_clim     best RMSE=1.8334 (tau=150)
+[  14.3s] --- 3-way: w*last_known + (1-w)*(a*seasonal_1y + (1-a)*ML_direct) ---
+[  14.3s]   BEST 3-way RMSE=1.8583  (tau,a)=(120, 0.0)
+[  14.3s] DONE (14.3s)

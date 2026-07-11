@@ -1,0 +1,9 @@
+[   8.0s] tr=78382 va=5384
+[  16.0s] [A] TEACHER-FORCED  RMSE=0.1885  (the optimistic number we reported)
+[  22.1s] [B] RECURSIVE       RMSE=0.5926  (honest — should resemble the 1.89 leaderboard)
+[ 115.0s] [C] no-lag RF      DIRECT RMSE=1.1453  MAE=0.4300  MAPE=0.0393
+[ 115.0s] [C] no-lag HistGB  DIRECT RMSE=0.6511  MAE=0.4529  MAPE=0.0427
+[ 115.1s] [C] no-lag Ridge   DIRECT RMSE=0.5552  MAE=0.4185  MAPE=0.0425
+[ 115.2s] [C] no-lag ENSEMBLE DIRECT RMSE=0.6145
+
+[ 115.2s] DONE (115.2s)

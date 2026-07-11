@@ -1,0 +1,12 @@
+[   3.2s] loaded train=(84396, 3) test=(21780, 3)
+[  12.1s] [SELF-CHECK far-horizon] direct=1.6160  blend(tau=150)=1.3742
+[  14.8s] origin=2025-09-18 18:00:00  horizon days: min=0 max=242
+[  14.9s] submission_v3.csv saved — missing=0 rows=21780
+                                             id  tma_mdpl
+0  2025-09-19 06:00:00 - Arjowinangun - Pacitan  1.000673
+1  2025-09-19 12:00:00 - Arjowinangun - Pacitan  1.000887
+2  2025-09-19 18:00:00 - Arjowinangun - Pacitan  1.002082
+3  2025-09-20 06:00:00 - Arjowinangun - Pacitan  1.004063
+4  2025-09-20 12:00:00 - Arjowinangun - Pacitan  1.003854
+
+[  14.9s] DONE (14.9s)  TAU=150  direct=0.8*Ridge+0.2*HistGB

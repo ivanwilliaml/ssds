@@ -1,0 +1,92 @@
+11:08:11 - cmdstanpy - INFO - Chain [1] start processing
+11:08:12 - cmdstanpy - INFO - Chain [1] done processing
+[   1.3s]   [1/30] Arjowinangun - Pacitan done
+11:08:12 - cmdstanpy - INFO - Chain [1] start processing
+11:08:13 - cmdstanpy - INFO - Chain [1] done processing
+[   2.1s]   [2/30] Babat done
+11:08:13 - cmdstanpy - INFO - Chain [1] start processing
+11:08:14 - cmdstanpy - INFO - Chain [1] done processing
+[   3.1s]   [3/30] Badegan done
+11:08:14 - cmdstanpy - INFO - Chain [1] start processing
+11:08:15 - cmdstanpy - INFO - Chain [1] done processing
+[   4.1s]   [4/30] Bengkelolor done
+11:08:15 - cmdstanpy - INFO - Chain [1] start processing
+11:08:16 - cmdstanpy - INFO - Chain [1] done processing
+[   5.0s]   [5/30] Boboh Kali Lamong done
+11:08:16 - cmdstanpy - INFO - Chain [1] start processing
+11:08:16 - cmdstanpy - INFO - Chain [1] done processing
+[   5.6s]   [6/30] Bojonegoro - Kali Kethek done
+11:08:17 - cmdstanpy - INFO - Chain [1] start processing
+11:08:17 - cmdstanpy - INFO - Chain [1] done processing
+[   6.4s]   [7/30] Brangkal done
+11:08:18 - cmdstanpy - INFO - Chain [1] start processing
+11:08:18 - cmdstanpy - INFO - Chain [1] done processing
+[   7.3s]   [8/30] Cepu done
+11:08:18 - cmdstanpy - INFO - Chain [1] start processing
+11:08:19 - cmdstanpy - INFO - Chain [1] done processing
+[   8.7s]   [9/30] Colo Weir done
+11:08:20 - cmdstanpy - INFO - Chain [1] start processing
+11:08:20 - cmdstanpy - INFO - Chain [1] done processing
+[   9.5s]   [10/30] Floodway Bridge C done
+11:08:21 - cmdstanpy - INFO - Chain [1] start processing
+11:08:21 - cmdstanpy - INFO - Chain [1] done processing
+[   9.9s]   [11/30] Gunungsari done
+11:08:21 - cmdstanpy - INFO - Chain [1] start processing
+11:08:21 - cmdstanpy - INFO - Chain [1] done processing
+[  10.7s]   [12/30] Jarum done
+11:08:22 - cmdstanpy - INFO - Chain [1] start processing
+11:08:23 - cmdstanpy - INFO - Chain [1] done processing
+[  11.9s]   [13/30] Jurug done
+11:08:23 - cmdstanpy - INFO - Chain [1] start processing
+11:08:23 - cmdstanpy - INFO - Chain [1] done processing
+[  12.7s]   [14/30] Kajangan done
+11:08:24 - cmdstanpy - INFO - Chain [1] start processing
+11:08:24 - cmdstanpy - INFO - Chain [1] done processing
+[  13.6s]   [15/30] Kali Anyar - Kreteg Abang done
+11:08:25 - cmdstanpy - INFO - Chain [1] start processing
+11:08:25 - cmdstanpy - INFO - Chain [1] done processing
+[  14.3s]   [16/30] Kali Pepe - PTPN done
+11:08:25 - cmdstanpy - INFO - Chain [1] start processing
+11:08:26 - cmdstanpy - INFO - Chain [1] done processing
+[  15.1s]   [17/30] Kali Pepe - Tugu Boto done
+11:08:26 - cmdstanpy - INFO - Chain [1] start processing
+11:08:26 - cmdstanpy - INFO - Chain [1] done processing
+[  15.7s]   [18/30] Karanggeneng done
+11:08:27 - cmdstanpy - INFO - Chain [1] start processing
+11:08:27 - cmdstanpy - INFO - Chain [1] done processing
+[  16.4s]   [19/30] Karangnongko done
+11:08:28 - cmdstanpy - INFO - Chain [1] start processing
+11:08:28 - cmdstanpy - INFO - Chain [1] done processing
+[  17.5s]   [20/30] Kedungupit done
+11:08:29 - cmdstanpy - INFO - Chain [1] start processing
+11:08:29 - cmdstanpy - INFO - Chain [1] done processing
+[  18.5s]   [21/30] Ketonggo done
+11:08:30 - cmdstanpy - INFO - Chain [1] start processing
+11:08:30 - cmdstanpy - INFO - Chain [1] done processing
+[  19.5s]   [22/30] Lorog done
+11:08:31 - cmdstanpy - INFO - Chain [1] start processing
+11:08:31 - cmdstanpy - INFO - Chain [1] done processing
+[  20.4s]   [23/30] Napel done
+11:08:32 - cmdstanpy - INFO - Chain [1] start processing
+11:08:32 - cmdstanpy - INFO - Chain [1] done processing
+[  21.6s]   [24/30] Ngadipiro done
+11:08:33 - cmdstanpy - INFO - Chain [1] start processing
+11:08:34 - cmdstanpy - INFO - Chain [1] done processing
+[  22.9s]   [25/30] Ngrembang done
+11:08:34 - cmdstanpy - INFO - Chain [1] start processing
+11:08:34 - cmdstanpy - INFO - Chain [1] done processing
+[  23.7s]   [26/30] Peren done
+11:08:35 - cmdstanpy - INFO - Chain [1] start processing
+11:08:36 - cmdstanpy - INFO - Chain [1] done processing
+[  25.1s]   [27/30] Sekayu done
+11:08:36 - cmdstanpy - INFO - Chain [1] start processing
+11:08:37 - cmdstanpy - INFO - Chain [1] done processing
+[  26.5s]   [28/30] Serenan done
+11:08:38 - cmdstanpy - INFO - Chain [1] start processing
+11:08:38 - cmdstanpy - INFO - Chain [1] done processing
+[  27.3s]   [29/30] Sumberrejo done
+11:08:38 - cmdstanpy - INFO - Chain [1] start processing
+11:08:40 - cmdstanpy - INFO - Chain [1] done processing
+[  29.1s]   [30/30] Wonogiri Dam done
+[  29.1s]   Prophet                R2= 1.000  RMSE=  0.627  MAE=  0.451  MAPE=  0.048  ( 29.1s, 30 stations)
+[  29.1s] TOTAL PROPHET TIME: 29.1s (0.48 min)

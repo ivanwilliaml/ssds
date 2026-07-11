@@ -1,0 +1,21 @@
+[   7.9s] tr(full)=78382  va=5384
+[  14.5s] [1] RF sub600: rmse=0.1893  (6.5s, n=18000)
+[  30.0s] [2] RF sub1500: rmse=1.2258  (15.4s, n=44425)
+[  57.4s] [3] RF weighted full: rmse=1.1629  (27.4s, n=78382)
+[  58.8s] [4] LR full: rmse=0.2412  (1.3s)
+[  58.8s]     ensemble RF_sub600+LR: rmse=0.1885
+[  58.8s]     ensemble RF_sub1500+LR: rmse=0.6435
+[  58.8s]     ensemble RF_weighted_full+LR: rmse=0.6116
+
+[  58.8s] FINAL SEARCH RESULTS:
+              combo       r2     rmse      mae     mape
+       RF_sub600+LR 0.999984 0.188514 0.113171 0.014648
+          RF_sub600 0.999984 0.189328 0.097337 0.012135
+            LR_full 0.999973 0.241220 0.161390 0.020757
+RF_weighted_full+LR 0.999829 0.611645 0.168687 0.016380
+      RF_sub1500+LR 0.999811 0.643471 0.173504 0.017100
+   RF_weighted_full 0.999383 1.162887 0.210863 0.015551
+         RF_sub1500 0.999314 1.225775 0.218538 0.017095
+
+[  58.8s] BEST: RF_sub600+LR  RMSE=0.1885
+[  58.8s] TOTAL TIME: 58.8s (0.98 min)

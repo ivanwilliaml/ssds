@@ -1,0 +1,13 @@
+[  10.8s] direct(no seasonal_lag_1y)=2.2005  blend tau120=1.8448
+[  10.8s] pooled RMSE=1.8448  | sum of squared err by station share:
+TOP-10 stations driving squared error:
+   Jurug                        rmse=  3.603  level~  79.36  err_share= 12.8%
+   Bojonegoro - Kali Kethek     rmse=  3.620  level~   9.81  err_share= 12.6%
+   Napel                        rmse=  3.444  level~  34.97  err_share= 11.6%
+   Wonogiri Dam                 rmse=  3.213  level~ 132.48  err_share= 10.1%
+   Peren                        rmse=  3.207  level~  91.51  err_share= 10.1%
+   Ketonggo                     rmse=  2.356  level~  38.42  err_share=  5.4%
+   Kedungupit                   rmse=  2.275  level~  65.43  err_share=  5.1%
+   Kajangan                     rmse=  2.082  level~  51.56  err_share=  4.3%
+   Karangnongko                 rmse=  1.912  level~  23.33  err_share=  3.6%
+   Cepu                         rmse=  1.865  level~  18.24  err_share=  3.4%

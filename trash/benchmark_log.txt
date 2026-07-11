@@ -1,0 +1,40 @@
+[   7.8s] features rebuilt: (84396, 42)
+[   8.1s] tr_sub=18000  va=5384
+[   8.3s]   LinearRegression       R2= 1.000  RMSE=  0.248  MAE=  0.168  MAPE=  0.021  (  0.2s)
+[   8.5s]   Ridge                  R2= 1.000  RMSE=  0.249  MAE=  0.169  MAPE=  0.021  (  0.2s)
+[   8.7s]   Lasso                  R2= 1.000  RMSE=  0.660  MAE=  0.541  MAPE=  0.055  (  0.2s)
+[   9.9s]   ElasticNet             R2= 1.000  RMSE=  0.942  MAE=  0.737  MAPE=  0.099  (  1.2s)
+[  11.8s]   KNN                    R2= 0.996  RMSE=  3.113  MAE=  2.089  MAPE=  0.258  (  1.8s)
+[  12.4s]   DecisionTree           R2= 1.000  RMSE=  0.236  MAE=  0.132  MAPE=  0.014  (  0.6s)
+[  18.8s]   RandomForest           R2= 1.000  RMSE=  0.189  MAE=  0.097  MAPE=  0.012  (  6.4s)
+[  20.5s]   ExtraTrees             R2= 1.000  RMSE=  0.280  MAE=  0.109  MAPE=  0.013  (  1.8s)
+[  28.5s]   GradientBoosting       R2= 1.000  RMSE=  0.484  MAE=  0.301  MAPE=  0.053  (  8.0s)
+[  29.1s]   HistGradientBoosting   R2= 1.000  RMSE=  0.341  MAE=  0.168  MAPE=  0.017  (  0.6s)
+[  30.7s]   LightGBM               R2= 1.000  RMSE=  0.433  MAE=  0.166  MAPE=  0.017  (  1.5s)
+[  33.2s]   XGBoost                R2= 1.000  RMSE=  0.275  MAE=  0.123  MAPE=  0.014  (  2.5s)
+[  41.8s]   CatBoost               R2= 1.000  RMSE=  0.585  MAE=  0.397  MAPE=  0.042  (  8.6s)
+[  41.8s] tabular models done
+C:\Users\hp\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\base\model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+C:\Users\hp\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\base\model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+C:\Users\hp\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\base\model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+[  73.2s]   SARIMAX                R2= 1.000  RMSE=  0.535  MAE=  0.293  MAPE=  0.032  ( 31.0s, 30 stations)
+
+[  73.2s] TOTAL BENCHMARK TIME: 73.2s (1.22 min)
+               model        type       r2     rmse      mae     mape  fit_predict_s
+        RandomForest     tabular 0.999984 0.189328 0.097337 0.012135       6.378567
+        DecisionTree     tabular 0.999975 0.236273 0.132315 0.014480       0.608979
+    LinearRegression     tabular 0.999972 0.248375 0.167748 0.020829       0.215701
+               Ridge     tabular 0.999972 0.248538 0.168628 0.020561       0.158734
+             XGBoost     tabular 0.999966 0.274745 0.123193 0.013622       2.533518
+          ExtraTrees     tabular 0.999964 0.279686 0.109114 0.013358       1.755131
+HistGradientBoosting     tabular 0.999947 0.341193 0.168217 0.016629       0.606518
+            LightGBM     tabular 0.999914 0.433088 0.166170 0.016638       1.514890
+    GradientBoosting     tabular 0.999893 0.483648 0.301171 0.052630       7.991404
+             SARIMAX statistical 0.999869 0.534822 0.293421 0.031983      30.966139
+            CatBoost     tabular 0.999844 0.585240 0.397328 0.041754       8.578564
+               Lasso     tabular 0.999801 0.660006 0.540643 0.054896       0.234370
+          ElasticNet     tabular 0.999595 0.941718 0.737002 0.098527       1.210107
+                 KNN     tabular 0.995576 3.113169 2.089239 0.258394       1.836885

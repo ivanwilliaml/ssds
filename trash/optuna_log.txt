@@ -1,0 +1,53 @@
+[   8.2s] tr(full)=78382  va=5384
+[  40.2s]     [A trial 1/15] rmse=0.4541  {'n_estimators': 181, 'max_depth': 29, 'min_samples_leaf': 11, 'min_samples_split': 13, 'max_features': 0.3248149123539492, 'n_jobs': 4, 'random_state': 42}
+[  57.2s]     [A trial 2/15] rmse=0.7870  {'n_estimators': 104, 'max_depth': 5, 'min_samples_leaf': 13, 'min_samples_split': 13, 'max_features': 0.7664580622368364, 'n_jobs': 4, 'random_state': 42}
+[  68.7s]     [A trial 3/15] rmse=0.4050  {'n_estimators': 57, 'max_depth': 30, 'min_samples_leaf': 13, 'min_samples_split': 6, 'max_features': 0.3454599737656805, 'n_jobs': 4, 'random_state': 42}
+[  92.2s]     [A trial 4/15] rmse=0.4864  {'n_estimators': 114, 'max_depth': 12, 'min_samples_leaf': 8, 'min_samples_split': 10, 'max_features': 0.43298331215843355, 'n_jobs': 4, 'random_state': 42}
+[ 138.5s]     [A trial 5/15] rmse=0.3677  {'n_estimators': 264, 'max_depth': 7, 'min_samples_leaf': 5, 'min_samples_split': 8, 'max_features': 0.5648559873736287, 'n_jobs': 4, 'random_state': 42}
+[ 168.3s]     [A trial 6/15] rmse=0.3553  {'n_estimators': 325, 'max_depth': 9, 'min_samples_leaf': 8, 'min_samples_split': 13, 'max_features': 0.2371603301759982, 'n_jobs': 4, 'random_state': 42}
+[ 253.9s]     [A trial 7/15] rmse=0.7786  {'n_estimators': 263, 'max_depth': 8, 'min_samples_leaf': 1, 'min_samples_split': 20, 'max_features': 0.9725056264596474, 'n_jobs': 4, 'random_state': 42}
+[ 343.6s]     [A trial 8/15] rmse=0.6741  {'n_estimators': 333, 'max_depth': 12, 'min_samples_leaf': 2, 'min_samples_split': 15, 'max_features': 0.5521219949916811, 'n_jobs': 4, 'random_state': 42}
+[ 369.0s]     [A trial 9/15] rmse=0.6643  {'n_estimators': 92, 'max_depth': 17, 'min_samples_leaf': 1, 'min_samples_split': 19, 'max_features': 0.40702398528001354, 'n_jobs': 4, 'random_state': 42}
+[ 416.7s]     [A trial 10/15] rmse=0.3804  {'n_estimators': 282, 'max_depth': 12, 'min_samples_leaf': 8, 'min_samples_split': 12, 'max_features': 0.3478835644204217, 'n_jobs': 4, 'random_state': 42}
+[ 472.2s]     [A trial 11/15] rmse=0.3952  {'n_estimators': 392, 'max_depth': 21, 'min_samples_leaf': 5, 'min_samples_split': 2, 'max_features': 0.21161077350404128, 'n_jobs': 4, 'random_state': 42}
+[ 514.5s]     [A trial 12/15] rmse=1.9152  {'n_estimators': 331, 'max_depth': 4, 'min_samples_leaf': 5, 'min_samples_split': 8, 'max_features': 0.6969741250688939, 'n_jobs': 4, 'random_state': 42}
+[ 563.8s]     [A trial 13/15] rmse=0.6030  {'n_estimators': 223, 'max_depth': 9, 'min_samples_leaf': 5, 'min_samples_split': 5, 'max_features': 0.5712301412012234, 'n_jobs': 4, 'random_state': 42}
+[ 604.5s]     [A trial 14/15] rmse=0.3050  {'n_estimators': 325, 'max_depth': 18, 'min_samples_leaf': 10, 'min_samples_split': 17, 'max_features': 0.20486110033583893, 'n_jobs': 4, 'random_state': 42}
+[ 652.3s]     [A trial 15/15] rmse=0.3106  {'n_estimators': 388, 'max_depth': 18, 'min_samples_leaf': 10, 'min_samples_split': 17, 'max_features': 0.21168916241703695, 'n_jobs': 4, 'random_state': 42}
+[ 652.4s] [A] RandomForest tuned: best_rmse=0.3050  params={'n_estimators': 325, 'max_depth': 18, 'min_samples_leaf': 10, 'min_samples_split': 17, 'max_features': 0.20486110033583893}  (644.2s)
+[ 655.9s]     [B trial 1/15] rmse=0.7928  {'max_depth': 17, 'min_samples_leaf': 20, 'min_samples_split': 30, 'random_state': 42}
+[ 660.2s]     [B trial 2/15] rmse=3.1758  {'max_depth': 25, 'min_samples_leaf': 4, 'min_samples_split': 8, 'random_state': 42}
+[ 661.8s]     [B trial 3/15] rmse=0.8259  {'max_depth': 5, 'min_samples_leaf': 18, 'min_samples_split': 25, 'random_state': 42}
+[ 666.4s]     [B trial 4/15] rmse=3.6226  {'max_depth': 29, 'min_samples_leaf': 1, 'min_samples_split': 39, 'random_state': 42}
+[ 670.5s]     [B trial 5/15] rmse=2.9769  {'max_depth': 34, 'min_samples_leaf': 5, 'min_samples_split': 9, 'random_state': 42}
+[ 672.9s]     [B trial 6/15] rmse=0.9870  {'max_depth': 9, 'min_samples_leaf': 7, 'min_samples_split': 22, 'random_state': 42}
+[ 676.7s]     [B trial 7/15] rmse=1.6701  {'max_depth': 19, 'min_samples_leaf': 6, 'min_samples_split': 25, 'random_state': 42}
+[ 678.9s]     [B trial 8/15] rmse=0.9977  {'max_depth': 8, 'min_samples_leaf': 6, 'min_samples_split': 16, 'random_state': 42}
+[ 682.4s]     [B trial 9/15] rmse=1.2492  {'max_depth': 20, 'min_samples_leaf': 16, 'min_samples_split': 9, 'random_state': 42}
+[ 686.2s]     [B trial 10/15] rmse=1.3782  {'max_depth': 22, 'min_samples_leaf': 12, 'min_samples_split': 3, 'random_state': 42}
+[ 689.4s]     [B trial 11/15] rmse=1.3470  {'max_depth': 14, 'min_samples_leaf': 14, 'min_samples_split': 35, 'random_state': 42}
+[ 690.6s]     [B trial 12/15] rmse=5.0511  {'max_depth': 3, 'min_samples_leaf': 20, 'min_samples_split': 30, 'random_state': 42}
+[ 693.6s]     [B trial 13/15] rmse=0.7924  {'max_depth': 13, 'min_samples_leaf': 20, 'min_samples_split': 28, 'random_state': 42}
+[ 696.9s]     [B trial 14/15] rmse=0.7925  {'max_depth': 15, 'min_samples_leaf': 20, 'min_samples_split': 31, 'random_state': 42}
+[ 699.9s]     [B trial 15/15] rmse=1.2489  {'max_depth': 13, 'min_samples_leaf': 16, 'min_samples_split': 31, 'random_state': 42}
+[ 699.9s] [B] DecisionTree tuned: best_rmse=0.7924  params={'max_depth': 13, 'min_samples_leaf': 20, 'min_samples_split': 28}  (47.6s)
+[ 701.8s]     [C trial 1] rmse=0.2813  {'fit_intercept': False, 'positive': True}
+[ 703.0s]     [C trial 2] rmse=0.2412  {'fit_intercept': True}
+[ 704.2s]     [C trial 3] rmse=0.2412  {'fit_intercept': False}
+[ 705.5s]     [C trial 4] rmse=0.2412  {'fit_intercept': True}
+[ 705.5s] [C] LinearRegression tuned: best_rmse=0.2412  params={'fit_intercept': True, 'positive': False}  (5.5s)
+[ 745.8s] [A] refit on full train (78382 rows) (40.3s)
+[ 749.0s] [B] refit on full train (3.2s)
+[ 750.3s] [C] refit on full train (1.3s)
+
+[ 750.3s] RESULTS:
+               combo       r2     rmse      mae     mape
+                  AC 0.999975 0.231698 0.131083 0.015367
+C (LinearRegression) 0.999973 0.241220 0.161390 0.020757
+    A (RandomForest) 0.999958 0.304957 0.129439 0.012440
+         ABC (bonus) 0.999946 0.344112 0.133001 0.014063
+                  BC 0.999915 0.430614 0.146264 0.015665
+                  AB 0.999899 0.471282 0.141106 0.012891
+    B (DecisionTree) 0.999713 0.792449 0.174349 0.015030
+
+[ 750.3s] TOTAL TIME: 750.3s (12.50 min)

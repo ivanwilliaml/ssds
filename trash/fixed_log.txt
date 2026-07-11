@@ -1,0 +1,21 @@
+[   2.8s] loaded train=(84396, 3) test=(21780, 3)
+[   7.9s] exogenous features built
+[  11.9s] [VAL] Ridge          RMSE=0.7302  MAE=0.4128
+[  11.9s] [VAL] HistGB         RMSE=0.6394  MAE=0.4444
+[  11.9s] [VAL] ens w_ridge=0.0   RMSE=0.6394
+[  11.9s] [VAL] ens w_ridge=0.3   RMSE=0.5883
+[  11.9s] [VAL] ens w_ridge=0.4   RMSE=0.5867
+[  11.9s] [VAL] ens w_ridge=0.5   RMSE=0.5932
+[  11.9s] [VAL] ens w_ridge=0.6   RMSE=0.6075
+[  11.9s] [VAL] ens w_ridge=0.7   RMSE=0.6291
+[  11.9s] [VAL] ens w_ridge=1.0   RMSE=0.7302
+[  11.9s] [VAL] BEST ensemble  RMSE=0.5867  (w_ridge=0.4)  <-- honest, direct, no accumulation
+[  14.6s] submission_fixed.csv saved — missing=0  rows=21780
+                                             id  tma_mdpl
+0  2025-09-19 06:00:00 - Arjowinangun - Pacitan  1.188589
+1  2025-09-19 12:00:00 - Arjowinangun - Pacitan  1.157561
+2  2025-09-19 18:00:00 - Arjowinangun - Pacitan  1.243358
+3  2025-09-20 06:00:00 - Arjowinangun - Pacitan  1.288388
+4  2025-09-20 12:00:00 - Arjowinangun - Pacitan  1.232811
+
+[  14.6s] DONE (14.6s) — honest validation RMSE=0.5867 (vs old teacher-forced 0.1885 / recursive 0.5926)

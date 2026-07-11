@@ -1,0 +1,7 @@
+[   8.0s] FAR-HORIZON backtest: tr<2025-01-01 (62567), va>= (21199, ~260 days)
+[  39.3s] OLD lag-ensemble RECURSIVE (far horizon)  RMSE=1.8472
+[  42.8s] NEW direct no-lag+seasonal w_ridge=0.3  RMSE=1.6018
+[  42.8s] NEW direct no-lag+seasonal w_ridge=0.4  RMSE=1.5950
+[  42.8s] NEW direct no-lag+seasonal w_ridge=0.5  RMSE=1.5906
+
+[  42.8s] DONE (42.8s)

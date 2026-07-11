@@ -1,0 +1,16 @@
+[   7.9s] tr(full)=78382  va=5384
+[  36.2s] [A untuned RandomForest] fit on full train (28.3s)
+[  39.0s] [B untuned DecisionTree] fit on full train (2.8s)
+[  40.2s] [C untuned LinearRegression] fit on full train (1.2s)
+
+[  40.2s] RESULTS (no tuning, defaults):
+               combo       r2     rmse      mae     mape
+C (LinearRegression) 0.999973 0.241220 0.161390 0.020757
+                  AC 0.999805 0.653600 0.167151 0.016507
+         ABC (bonus) 0.999561 0.980322 0.173348 0.016127
+                  BC 0.999385 1.161108 0.167991 0.017307
+    A (RandomForest) 0.999287 1.249822 0.207690 0.015777
+                  AB 0.999039 1.450851 0.210321 0.016756
+    B (DecisionTree) 0.997603 2.291682 0.230723 0.018966
+
+[  40.2s] TOTAL TIME: 40.2s (0.67 min)

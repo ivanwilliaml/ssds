@@ -1,0 +1,21 @@
+[   5.5s] REAL TEST regime 2025-09-19..2026-05-18: {'nino34_mean': np.float64(-0.32147835087114024), 'rainfall_mean': np.float64(0.367662009085159), 'rainfall_total_per_station': np.float64(2131.3366666666666)}
+[   5.5s] [FOLD1 2023-24] CUT=2023-09-18 18:00:00 VA_END=2024-05-18 18:00:00 train_only=22336 val_only=20696
+[   5.5s] [FOLD1 2023-24] fold climate regime: {'nino34_mean': np.float64(1.476035462213806), 'rainfall_mean': np.float64(0.2812767544614678), 'rainfall_total_per_station': np.float64(1633.9366666666667)}  | nino34_gap=1.798  rainfall_gap=23.5%
+[   5.5s] [FOLD1 2023-24] row-coverage vs real test: min=0.45 mean=0.98 max=1.00
+[  13.7s] [FOLD1 2023-24] ensemble weights(r,h,l)=(np.float64(0.4), np.float64(0.0), np.float64(0.6)) direct RMSE=2.7345
+[  13.7s] [FOLD1 2023-24] tau grid: 5=2.7301, 10=2.7202, 15=2.7091, 20=2.6977, 25=2.6866, 30=2.6758, 40=2.6553, 50=2.6364, 60=2.6196, 75=2.5987, 90=2.5832, 120=2.5653, 150=2.5599, 180=2.5617, 240=2.5754, 300=2.5932
+[  13.7s] [FOLD1 2023-24] BEST tau=150 blend RMSE=2.5599  (persistence=2.8156)
+[  13.7s] [FOLD2 2024-25] CUT=2024-09-18 18:00:00 VA_END=2025-05-18 18:00:00 train_only=53838 val_only=19514
+[  13.8s] [FOLD2 2024-25] fold climate regime: {'nino34_mean': np.float64(-0.3259930855661193), 'rainfall_mean': np.float64(0.4296779026217229), 'rainfall_total_per_station': np.float64(2485.686666666667)}  | nino34_gap=0.005  rainfall_gap=16.9%
+[  13.8s] [FOLD2 2024-25] row-coverage vs real test: min=0.88 mean=0.90 max=0.90
+[  23.2s] [FOLD2 2024-25] ensemble weights(r,h,l)=(np.float64(0.8), np.float64(0.2), np.float64(-5.551115123125783e-17)) direct RMSE=1.4490
+[  23.2s] [FOLD2 2024-25] tau grid: 5=1.4472, 10=1.4457, 15=1.4445, 20=1.4442, 25=1.4453, 30=1.4478, 40=1.4566, 50=1.4694, 60=1.4846, 75=1.5104, 90=1.5378, 120=1.5931, 150=1.6452, 180=1.6923, 240=1.7712, 300=1.8328
+[  23.2s] [FOLD2 2024-25] BEST tau=20 blend RMSE=1.4442  (persistence=2.2563)
+
+===== SUMMARY =====
+{'label': 'FOLD1 2023-24', 'weights': (np.float64(0.4), np.float64(0.0), np.float64(0.6)), 'direct_rmse': np.float64(2.7344719965609023), 'best_tau': 150, 'blend_rmse': np.float64(2.5599002739578425), 'nino_gap': np.float64(1.7975138130849464), 'rainfall_gap_pct': np.float64(23.495833806337696)}
+{'label': 'FOLD2 2024-25', 'weights': (np.float64(0.8), np.float64(0.2), np.float64(-5.551115123125783e-17)), 'direct_rmse': np.float64(1.4490223420679011), 'best_tau': 20, 'blend_rmse': np.float64(1.4441873423348952), 'nino_gap': np.float64(0.004514734694979039), 'rainfall_gap_pct': np.float64(16.867637124345798)}
+
+PRIMARY FOLD (closest climate regime to real test): FOLD2 2024-25
+  -> use weights=(np.float64(0.8), np.float64(0.2), np.float64(-5.551115123125783e-17)) tau=20 for final submission
+[  23.2s] DONE multi_fold_validate_v2.py
